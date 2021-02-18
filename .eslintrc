@@ -9,6 +9,7 @@
       {
         "devDependencies": true
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": 0
   }
 }
