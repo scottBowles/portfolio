@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: {
+        test: 'linear-gradient(145deg, #1c2532, #212c3b)',
+      },
       animation: {
         sideDrawerOpen: 'sideDrawerOpen 250ms ease forwards',
         sideDrawerClose: 'sideDrawerClose 250ms ease forwards',
@@ -18,6 +21,9 @@ module.exports = {
           '100%': { transform: 'scaleX(0)' },
         },
       },
+    },
+    boxShadow: {
+      test: '20px 20px 40px #1a232f, -20px -20px 40px #242f3f',
     },
   },
   variants: {

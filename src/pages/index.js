@@ -1,21 +1,35 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
 import { Work } from '../components/Work';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <main className="flex flex-col">
       <Hero />
-      <Work />
+      <Work allImages={data.allFile.nodes} />
       <About />
       <Contact />
     </main>
   </Layout>
 );
 
-const Title = () => <h1>Title</h1>;
+export const query = graphql`
+  query allImages {
+    allFile {
+      nodes {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+            originalName
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
