@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const HamburgerIcon = (props) => (
+const HamburgerIcon = ({ className, ...props }) => (
   <svg
     {...props}
-    className="stroke-current"
+    className={`stroke-current ${className}`}
     version="1.1"
     id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
@@ -45,10 +45,10 @@ const HamburgerIcon = (props) => (
   </svg>
 );
 
-const XIcon = (props) => (
+const XIcon = ({ className, ...props }) => (
   <svg
     {...props}
-    className="h-16 w-16 feather feather-x"
+    className={`h-16 w-16 feather feather-x ${className}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -62,6 +62,25 @@ const XIcon = (props) => (
   </svg>
 );
 
+const navItems = [
+  {
+    text: 'Home',
+    href: '/#home',
+  },
+  {
+    text: 'Work',
+    href: '/#work',
+  },
+  {
+    text: 'About',
+    href: '/#about',
+  },
+  {
+    text: 'Contact',
+    href: '/#contact',
+  },
+];
+
 const Nav = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const toggleNav = () => setNavIsOpen(!navIsOpen);
@@ -72,34 +91,29 @@ const Nav = () => {
       <nav>
         <div className="text-gray-400 md:hidden">
           {navIsOpen ? (
-            <div
-              className={`${
-                navIsOpen ? 'flex' : 'hidden'
-              } flex-col items-end bg-gray-700 absolute top-0 right-0`}
-            >
-              <XIcon onClick={toggleNav} />
-              <ol
-                className={`${
-                  navIsOpen ? 'flex' : 'hidden'
-                } flex-col items-center md:flex md:flex-row w-full text-xl pb-8`}
-              >
-                <li className="hover:bg-gray-600 px-32 py-4">
-                  <a href="/#home">Home</a>
-                </li>
-                <li className="hover:bg-gray-600 px-32 py-4">
-                  <a href="/#work">Work</a>
-                </li>
-                <li className="hover:bg-gray-600 px-32 py-4">
-                  <a href="/#about">About</a>
-                </li>
-                <li className="hover:bg-gray-600 px-32 py-4">
-                  <a href="/#contact">Contact</a>
-                </li>
-              </ol>
-            </div>
+            <XIcon
+              onClick={toggleNav}
+              className="absolute top-0 right-0 z-20"
+            />
           ) : (
-            <HamburgerIcon onClick={toggleNav} />
+            <HamburgerIcon
+              onClick={toggleNav}
+              className="absolute top-0 right-0 z-20"
+            />
           )}
+          <div
+            className={`flex flex-col items-end bg-gray-700 absolute top-0 right-0 ${
+              navIsOpen ? 'animate-sideDrawerOpen' : 'animate-sideDrawerClose'
+            } origin-right h-full w-3/4`}
+          >
+            <ol className="flex flex-col items-center md:flex md:flex-row w-full text-2xl pt-16">
+              {navItems.map(({ text, href }) => (
+                <li className="hover:bg-gray-600 w-full text-center py-5">
+                  <a href={href}>{text}</a>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </nav>
     </header>
