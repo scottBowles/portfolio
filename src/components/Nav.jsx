@@ -108,7 +108,10 @@ const Nav = () => {
           >
             <ol className="flex flex-col items-center md:flex md:flex-row w-full text-2xl pt-16">
               {navItems.map(({ text, href }) => (
-                <li className="hover:bg-gray-600 w-full text-center py-5">
+                <li
+                  className="hover:bg-gray-600 w-full text-center py-5"
+                  key={text}
+                >
                   <a href={href}>{text}</a>
                 </li>
               ))}
