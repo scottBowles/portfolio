@@ -86,10 +86,10 @@ const Nav = () => {
   const toggleNav = () => setNavIsOpen(!navIsOpen);
 
   return (
-    <header className="flex justify-between h-16">
-      <div>SB</div>
+    <header className="flex justify-between items-center">
+      {/* <div className="font-italianno text-4xl ml-4 mt-3">SB</div> */}
       <nav>
-        <div className="text-gray-400 md:hidden">
+        <div className="md:hidden">
           {navIsOpen ? (
             <XIcon
               onClick={toggleNav}
@@ -102,9 +102,9 @@ const Nav = () => {
             />
           )}
           <div
-            className={`flex flex-col items-end bg-gray-700 absolute top-0 right-0 ${
+            className={`flex flex-col items-end bg-gray-800 absolute top-0 right-0 ${
               navIsOpen ? 'animate-sideDrawerOpen' : 'animate-sideDrawerClose'
-            } origin-right h-full w-3/4 z-10`}
+            } origin-right h-full w-3/4 z-10 pt-8`}
           >
             <ol className="flex flex-col items-center md:flex md:flex-row w-full text-2xl pt-16">
               {navItems.map(({ text, href }) => (

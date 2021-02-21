@@ -9,12 +9,13 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
+import '@fontsource/italianno';
 
 function Layout({ children }) {
   return (
     <>
       {/* <Head /> */}
-      <div className="bg-gray-800 text-gray-300 min-h-screen w-screen">
+      <div className="bg-gray-900 text-gray-300 min-h-screen w-screen">
         <Nav />
         {children}
       </div>

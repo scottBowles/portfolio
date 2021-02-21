@@ -1,5 +1,10 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { HiExternalLink } from '@react-icons/all-files/hi/HiExternalLink';
+import { BsPencilSquare } from '@react-icons/all-files/bs/BsPencilSquare';
+
+import { IconContext } from '@react-icons/all-files';
 import { findImageFluidData } from '../utils';
 
 const projects = [
@@ -43,26 +48,65 @@ const Project = ({ project, allImages }) => {
   if (!imgData) return null;
 
   return (
-    <div className="shadow-test rounded-tl-3xl rounded-br-3xl bg-gradient-to-br bg-test p-8">
-      <h3>{project.name}</h3>
-      <p>{project.description}</p>
+    <div className="shadow-subtle rounded-tl-3xl rounded-br-3xl bg-gradient-to-br bg-neumorphic p-8 mb-16">
+      <h3 className="text-gray-300 uppercase text-xl font-semibold tracking-wide pb-4 text-center leading-snug">
+        {project.name}
+      </h3>
+      <p className="italic text-gray-400 pb-9 leading-snug text-center">
+        {project.description}
+      </p>
       <Img
         fluid={imgData.childImageSharp.fluid}
         alt="Coffee shop inventory app homepage"
+        className="mb-4"
       />
-      <p>{project.techUsed.join(' | ')}</p>
-      <div>
-        <a href={project.githubUrl}>GH</a> |{' '}
-        <a href={project.blogEntry}>Blog entry</a> |{' '}
-        <a href={project.liveUrl}>Live</a>
-      </div>
+      <ul className="text-sm tracking-wider flex flex-wrap justify-between -mx-1 mb-7">
+        {project.techUsed.map((tech) => (
+          <li className="px-1">{tech}</li>
+        ))}
+      </ul>
+      <ul className="flex justify-between items-center">
+        <li>
+          <a
+            href={project.githubUrl}
+            title={`${project.name} Github`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconContext.Provider
+              value={{ size: '1.5em', className: 'text-blue-300' }}
+            >
+              <FaGithub />
+            </IconContext.Provider>
+          </a>
+        </li>
+        <li>
+          <a href={project.blogEntry} target="_blank" rel="noreferrer">
+            <p className="text-gray-300 font-semibold">Blog entry</p>
+          </a>
+        </li>
+        <li>
+          <a
+            href={project.liveUrl}
+            title={`${project.name} Live`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconContext.Provider
+              value={{ size: '1.75em', className: 'text-blue-300' }}
+            >
+              <HiExternalLink />
+            </IconContext.Provider>
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };
 
 const Work = ({ allImages }) => (
   <section className="p-8" id="work">
-    <h2 className="pb-8 text-3xl font-bold">Projects</h2>
+    <h2 className="pb-16 text-4xl font-black text-center">Projects</h2>
     {projects.map((project, i) => (
       <Project project={project} allImages={allImages} key={i + project.name} />
     ))}

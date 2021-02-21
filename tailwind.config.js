@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        test: 'linear-gradient(145deg, #1c2532, #212c3b)',
+        neumorphic: 'linear-gradient(145deg, #0f1623, #121a2a)',
+        btn: 'linear-gradient(145deg, #1E3C9C, #1E3976)',
+      },
+      fontFamily: {
+        italianno: ['Italianno'],
       },
       animation: {
         sideDrawerOpen: 'sideDrawerOpen 250ms ease forwards',
@@ -23,7 +27,8 @@ module.exports = {
       },
     },
     boxShadow: {
-      test: '20px 20px 40px #1a232f, -20px -20px 40px #242f3f',
+      subtle: '20px 20px 40px #0a0e17, -20px -20px 40px #151e31',
+      btn: '3px 3px 10px -3px #04060A, inset 2px 3px 4px -6px #F3F4F6',
     },
   },
   variants: {
