@@ -12,7 +12,7 @@ const Hero = () => (
     </p>
     <a
       href="mailto:shbowles@gmail.com"
-      className="bg-btn border border-blue-900 rounded-full self-center shadow-btn px-14 py-4 text-lg text-blue-300 font-semibold"
+      className="bg-blue-900 hover:bg-blue-800 border border-blue-900 rounded-full self-center shadow-btn px-14 py-4 text-lg text-blue-300 font-semibold"
     >
       Contact Me
     </a>

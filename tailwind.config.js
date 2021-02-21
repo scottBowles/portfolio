@@ -1,11 +1,13 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
+  variants: {
+    backgroundImage: ['responsive', 'hover'],
+  },
   theme: {
     extend: {
       backgroundImage: {
         neumorphic: 'linear-gradient(145deg, #0f1623, #121a2a)',
-        btn: 'linear-gradient(145deg, #1E3C9C, #1E3976)',
       },
       fontFamily: {
         italianno: ['Italianno'],

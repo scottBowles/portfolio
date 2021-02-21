@@ -2,7 +2,6 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
 import { HiExternalLink } from '@react-icons/all-files/hi/HiExternalLink';
-import { BsPencilSquare } from '@react-icons/all-files/bs/BsPencilSquare';
 
 import { IconContext } from '@react-icons/all-files';
 import { findImageFluidData } from '../utils';
@@ -74,7 +73,10 @@ const Project = ({ project, allImages }) => {
             rel="noreferrer"
           >
             <IconContext.Provider
-              value={{ size: '1.5em', className: 'text-blue-300' }}
+              value={{
+                size: '1.5em',
+                className: 'text-blue-300 hover:text-blue-500',
+              }}
             >
               <FaGithub />
             </IconContext.Provider>
@@ -82,7 +84,9 @@ const Project = ({ project, allImages }) => {
         </li>
         <li>
           <a href={project.blogEntry} target="_blank" rel="noreferrer">
-            <p className="text-gray-300 font-semibold">Blog entry</p>
+            <p className="text-blue-300 font-semibold hover:underline">
+              Blog entry
+            </p>
           </a>
         </li>
         <li>
@@ -93,7 +97,10 @@ const Project = ({ project, allImages }) => {
             rel="noreferrer"
           >
             <IconContext.Provider
-              value={{ size: '1.75em', className: 'text-blue-300' }}
+              value={{
+                size: '1.75em',
+                className: 'text-blue-300 hover:text-blue-500',
+              }}
             >
               <HiExternalLink />
             </IconContext.Provider>
