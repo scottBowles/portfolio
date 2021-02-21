@@ -104,7 +104,7 @@ const Nav = () => {
           <div
             className={`flex flex-col items-end bg-gray-700 absolute top-0 right-0 ${
               navIsOpen ? 'animate-sideDrawerOpen' : 'animate-sideDrawerClose'
-            } origin-right h-full w-3/4`}
+            } origin-right h-full w-3/4 z-10`}
           >
             <ol className="flex flex-col items-center md:flex md:flex-row w-full text-2xl pt-16">
               {navItems.map(({ text, href }) => (
