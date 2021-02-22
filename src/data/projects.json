@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Corcovado Cafe",
+    "description": "Coffee Shop Inventory App",
+    "image": "./images/corcovadoDesktop.png",
+    "techUsed": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Pug",
+      "Bootstrap"
+    ],
+    "githubUrl":
+      "https://github.com/scottBowles/coffee-shop-inventory-application",
+    "blogEntry": "/#",
+    "liveUrl": "https://corcovadocafe.herokuapp.com/"
+  },
+  {
+    "name": "Daily Office Android App",
+    "description":
+      "In-progress Android version of https://www.dailyoffice2019.com/",
+    "image": "./images/corcovadoDesktop.png",
+    "techUsed": [
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "React Router",
+      "Styled Components"
+    ],
+    "githubUrl": "https://github.com/scottBowles/do2019-rnative-android",
+    "blogEntry": "/#",
+    "liveUrl": "/#"
+  }
+]

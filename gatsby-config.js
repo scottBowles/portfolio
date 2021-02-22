@@ -1,26 +1,28 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'portfolio',
   },
   plugins: [
     'gatsby-plugin-postcss',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/data/images/icon.png',
       },
     },
-    'gatsby-transformer-sharp',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images/`,
+        name: 'data',
+        path: path.join(__dirname, 'src', 'data'),
       },
-      __key: 'images',
     },
   ],
 };
